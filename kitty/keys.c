@@ -177,7 +177,7 @@ send_key_to_child(id_type window_id, Screen *screen, const GLFWkeyevent *ev) {
         debug("discarding repeat key event as DECARM is off\n");
         return;
     }
-    if (screen->scrolled_by && action == GLFW_PRESS && !is_no_action_key(key, native_key)) {
+    if (OPT(scroll_on_keystroke) && screen->scrolled_by && action == GLFW_PRESS && !is_no_action_key(key, native_key)) {
         screen_history_scroll(screen, SCROLL_FULL, false);  // scroll back to bottom
     }
     char encoded_key[KEY_BUFFER_SIZE] = {0};

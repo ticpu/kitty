@@ -560,6 +560,15 @@ opt('scrollback_fill_enlarged_window', 'no',
     long_text='Fill new space with lines from the scrollback buffer after enlarging a window.'
     )
 
+opt('scroll_on_keystroke', 'yes',
+    option_type='to_bool', ctype='bool',
+    long_text='''
+Scroll back to the bottom of the scrollback buffer automatically when a key is
+pressed. If disabled, the terminal will remain at the current scroll position
+when you type, allowing you to view scrollback history while typing commands.
+'''
+    )
+
 opt('wheel_scroll_multiplier', '5.0',
     option_type='float', ctype='double',
     long_text='''
